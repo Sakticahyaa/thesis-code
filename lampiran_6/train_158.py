@@ -5,8 +5,8 @@ sys.path.insert(0, ROOT)
 
 from shared.common import Tee, set_seed, SCORE_COLUMNS
 from shared.data_loader_b import load_captions, get_loaders
-from approach_b.model import DualRobertaCrossAttnCls
-from approach_b.trainer import run
+from lampiran_6.model import DualRobertaCrossAttnCls
+from lampiran_6.trainer import run
 
 CAPTIONS_PATH = os.path.join(ROOT, 'data', 'captions', 'qwen7b_captions_full1054.json')
 

@@ -1,18 +1,19 @@
-"""Exp 056 — BERT and ResNet50 encode independently, concatenated FC, CE."""
+"""Exp 047 — single ResNet18 + BERT + cross-attention, CE."""
 import os, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
 from shared.common import Tee, set_seed, SCORE_COLUMNS
 from shared.data_loader_a import get_loaders
-from approach_a.models import BRCAFLateFusionCls
-from approach_a.trainer import run
+from lampiran_5.models import BRCAFSingleCls
+from lampiran_5.trainer import run
 
-RESULTS_DIR = os.path.join(ROOT, 'results', '056', 'results')
-MODELS_DIR  = os.path.join(ROOT, 'results', '056', 'models')
+RESULTS_DIR = os.path.join(ROOT, 'results', '047', 'results')
+MODELS_DIR  = os.path.join(ROOT, 'results', '047', 'models')
 
 CFG = {
-    'exp': '056_BRCAFLateFusionCls',
+    'exp': '047_BRCAFSingleCls_ResNet18',
+    'resnet_type': 'resnet18',
     'lr': 2e-5, 'weight_decay': 0.01,
     'dropout1': 0.30, 'dropout2': 0.25,
     'batch_size': 4, 'accum_steps': 8,
@@ -28,5 +29,5 @@ if __name__ == '__main__':
     print(f"Exp: {CFG['exp']}", flush=True)
     train_loader, val_loader, test_loader, train_df = get_loaders(
         SCORE_COLUMNS, CFG['batch_size'], CFG['seed'])
-    model = BRCAFLateFusionCls(d1=CFG['dropout1'], d2=CFG['dropout2'])
+    model = BRCAFSingleCls(resnet_type=CFG['resnet_type'], d1=CFG['dropout1'], d2=CFG['dropout2'])
     run(model, train_loader, val_loader, test_loader, train_df, CFG, RESULTS_DIR, MODELS_DIR, mode='cls')

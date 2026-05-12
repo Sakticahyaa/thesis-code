@@ -1,19 +1,19 @@
-"""Exp 047 — single ResNet18 + BERT + cross-attention, CE."""
+"""Exp 049 — single ResNet152 + BERT + cross-attention, CE."""
 import os, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
 from shared.common import Tee, set_seed, SCORE_COLUMNS
 from shared.data_loader_a import get_loaders
-from approach_a.models import BRCAFSingleCls
-from approach_a.trainer import run
+from lampiran_5.models import BRCAFSingleCls
+from lampiran_5.trainer import run
 
-RESULTS_DIR = os.path.join(ROOT, 'results', '047', 'results')
-MODELS_DIR  = os.path.join(ROOT, 'results', '047', 'models')
+RESULTS_DIR = os.path.join(ROOT, 'results', '049', 'results')
+MODELS_DIR  = os.path.join(ROOT, 'results', '049', 'models')
 
 CFG = {
-    'exp': '047_BRCAFSingleCls_ResNet18',
-    'resnet_type': 'resnet18',
+    'exp': '049_BRCAFSingleCls_ResNet152',
+    'resnet_type': 'resnet152',
     'lr': 2e-5, 'weight_decay': 0.01,
     'dropout1': 0.30, 'dropout2': 0.25,
     'batch_size': 4, 'accum_steps': 8,
