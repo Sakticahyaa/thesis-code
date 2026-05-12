@@ -8,7 +8,7 @@ from transformers import BertTokenizer
 from torchvision import transforms
 
 _HERE     = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_CSV  = os.path.join(_HERE, 'data', 'data.csv')
+DATA_CSV  = os.path.join(_HERE, 'data', 'lampiran_3', 'data.csv')
 IMG_CACHE = 'C:/Outpost/Skripsi/Research 3/shared_data/image_cache'  # images not copied (too large)
 MAX_LEN   = 464
 

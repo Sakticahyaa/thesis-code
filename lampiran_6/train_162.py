@@ -8,7 +8,7 @@ from shared.data_loader_b import load_captions, get_loaders
 from lampiran_6.model import DualRobertaCrossAttnCls
 from lampiran_6.trainer import run
 
-CAPTIONS_PATH = os.path.join(ROOT, 'data', 'captions', 'deplot_qwen7b_captions_full1054.json')
+CAPTIONS_PATH = os.path.join(ROOT, 'data', 'lampiran_2', 'deplot_qwen7b_captions_full1054.json')
 
 RESULTS_DIR = os.path.join(ROOT, 'results', '162', 'results')
 MODELS_DIR  = os.path.join(ROOT, 'results', '162', 'models')

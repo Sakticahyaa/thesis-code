@@ -5,7 +5,7 @@ from torch.utils.data import Dataset, DataLoader
 from transformers import RobertaTokenizer
 
 _HERE    = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_CSV = os.path.join(_HERE, 'data', 'data.csv')
+DATA_CSV = os.path.join(_HERE, 'data', 'lampiran_3', 'data.csv')
 
 
 def load_captions(path, exclude_types=None):

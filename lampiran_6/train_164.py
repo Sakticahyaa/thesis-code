@@ -8,8 +8,8 @@ from shared.data_loader_b import load_captions, get_loaders
 from lampiran_6.model import DualRobertaCrossAttnCls
 from lampiran_6.trainer import run
 
-QWEN_PATH   = os.path.join(ROOT, 'data', 'captions', 'qwen7b_captions_full1054.json')
-MATCHA_PATH = os.path.join(ROOT, 'data', 'captions', 'matcha_barpie_captions.json')
+QWEN_PATH   = os.path.join(ROOT, 'data', 'lampiran_2', 'qwen7b_captions_full1054.json')
+MATCHA_PATH = os.path.join(ROOT, 'data', 'lampiran_2', 'matcha_barpie_captions.json')
 
 RESULTS_DIR = os.path.join(ROOT, 'results', '164', 'results')
 MODELS_DIR  = os.path.join(ROOT, 'results', '164', 'models')
